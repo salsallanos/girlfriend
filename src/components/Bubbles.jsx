@@ -2,6 +2,7 @@ import React from "react";
 import { Slider } from './Slider';
 
 export const Bubbles = () => {
+  //push
   return (
     <div className="test_container flex flex-1">
       <div className="bubbles">
