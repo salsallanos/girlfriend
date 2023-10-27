@@ -3,9 +3,6 @@ import { motion } from "framer-motion"
 import { Slider } from './Slider';
 
 export const Bubbles = () => {
-  const [pos, setPos] = useState('relative');
-  const [top, setTop] = useState(0);
-  const [left, setLeft] = useState(0);
   return (
     <div className="test_container flex flex-1">
       <div className="bubbles">
