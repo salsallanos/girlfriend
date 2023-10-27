@@ -1,1 +1,0 @@
-This project was created to ask the girl im dating to be my girlfriend :)
