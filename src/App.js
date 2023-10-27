@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App_copy.css';
 import { Bubbles } from './components/Bubbles';
 
