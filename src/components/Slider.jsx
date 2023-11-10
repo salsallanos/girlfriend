@@ -1,27 +1,32 @@
 // Slider.js
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 
 const texts = [
   {
     title: "Liurys Alvarez",
-    message: "A very beautiful and special woman",
-    prev_next: true,
+    message: "She says she came from dominican republic but i believe she came from heaven. She is beautiful, unique and special.",
+    prev: false,
+    next: true
   },
   {
     title: "Will you",
     message:"I want you to know that i've been really enjoying getting to know you and spending time together. I find myself constantly thinking about you, your smile, and the way you make every moment we share special.",
-    prev_next: true,
+    prev: true,
+    next: true
   },
   {
     title: "Be my",
-    message: "I promise to respect you and to support your ambitions,  With you, I want to create a partnership built on trust, understanding, and love.",
-    prev_next: true,
+    message: "I promise to respect you and to support you, I want to create a partnership built on trust, understanding, and love.",
+    prev: true,
+    next: true
   },
   {
     title: "Girlfriend?",
     message: "So, with all the sincerity in my heart, I want to ask: Liurys, would you be my girlfriend? I would be honored to call you mine.",
-    prev_next: false,
+    prev: false,
+    next: false
   },
 ];
 
@@ -52,8 +57,7 @@ export const Slider = () => {
         {texts[currentIndex].message}
       </p>
       <div className="flex">
-        {texts[currentIndex].prev_next ? (
-          <>
+        {texts[currentIndex].prev && (
             <motion.button
               whileHover={{
                 scale: 1.2,
@@ -64,6 +68,8 @@ export const Slider = () => {
             >
               Previous
             </motion.button>
+        )}
+        {texts[currentIndex].next && (
             <motion.button
               whileHover={{
                 scale: 1.2,
@@ -74,8 +80,8 @@ export const Slider = () => {
             >
               Next
             </motion.button>
-          </>
-        ) : (
+        )}
+        {!texts[currentIndex].prev && !texts[currentIndex].next && (
           <>
             <motion.button
               onClick={(e) => {
@@ -100,18 +106,20 @@ export const Slider = () => {
             >
               No
             </motion.button>
-            <motion.button
-              onClick={(e) => {
-                console.log("CLICKED YES");
-              }}
-              whileHover={{
-                scale: 1.2,
-                transition: { duration: 0.5 },
-              }}
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-            >
-              Yes
-            </motion.button>
+            <Link to="/congratulations">
+              <motion.button
+                onClick={(e) => {
+                  console.log("CLICKED YES");
+                }}
+                whileHover={{
+                  scale: 1.2,
+                  transition: { duration: 0.5 },
+                }}
+                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              >
+                Yes
+              </motion.button>
+            </Link>
           </>
         )}
       </div>
