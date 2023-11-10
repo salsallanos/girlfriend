@@ -1,6 +1,6 @@
 import './App_copy.css';
 import { Bubbles } from './components/Bubbles';
-import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider, Link } from 'react-router-dom';
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from 'react-router-dom';
 import { Congratulations } from './pages/Congratulations';
 
 function App() {
